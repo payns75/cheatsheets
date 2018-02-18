@@ -1,21 +1,24 @@
 <mat-sidenav-container>
-  <mat-toolbar class="shadowtoolbar" style="width:100%;height:80px">
-      <mat-toolbar-row>
-          <div class="mennuheader">
-              <div class="titreApplication">
-                  {{title}}
-              </div>
-          </div>
-          <div style="display:flex;flex-direction:column;justify-content:space-between;font-size:0.7em">
-              <!-- <app-utilisateur></app-utilisateur> -->
-          </div>
-      </mat-toolbar-row>
+  <mat-toolbar class="shadowtoolbar toolbarheader" color="primary">
+    <div>
+      {{title}}
+    </div>
+    <div>
+      FlexBox Tool
+    </div>
+    <div>
+      <a mat-button href="https://stackblitz.com/github/payns75/cheatsheets" target="_blank" class="stackblitz">
+          <img src="assets/blitz_logo.png" alt="stackblitz" /> StackBlitz
+      </a>
+      <a mat-button href="https://github.com/payns75/cheatsheets" target="_blank" class="github">
+        <img src="assets/github-circle-white-transparent.svg" alt="github" /> GitHub
+      </a>
+    </div>
   </mat-toolbar>
   <div class="content-wrapper">
-      <div class="content">
-          <!-- <app-error></app-error> -->
-          <!-- <router-outlet></router-outlet> -->
-          plop
-      </div>
+    <div class="content">
+      <!-- <app-error></app-error> -->
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </mat-sidenav-container>

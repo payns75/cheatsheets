@@ -6,11 +6,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppMaterialModule } from './app.material.module';
+import { AppMaterialModule } from './commons/app.material.module';
+import { FlextoolsComponent } from './pages/flextools/flextools.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FlextoolsComponent
   ],
   imports: [
     BrowserModule,

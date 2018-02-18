@@ -1,0 +1,45 @@
+<!-- <h1>
+  FlexBox
+</h1> -->
+<div>
+  <form class="options-container" [formGroup]="flexgroup" novalidate>
+    <div>
+      <h4>flex-direction</h4>
+      <mat-radio-group formControlName="flexdirection">
+        <mat-radio-button value="row">row</mat-radio-button>
+        <mat-radio-button value="column">column</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <h4>justifiy-content</h4>
+      <mat-radio-group formControlName="justifycontent">
+        <mat-radio-button value="center">center</mat-radio-button>
+        <mat-radio-button value="flex-end">flex-end</mat-radio-button>
+        <mat-radio-button value="flex-start">flex-start</mat-radio-button>
+        <mat-radio-button value="space-around">space-around</mat-radio-button>
+        <mat-radio-button value="space-between">space-between</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <h4>align-items</h4>
+      <mat-radio-group formControlName="alignitems">
+        <mat-radio-button value="center">center</mat-radio-button>
+        <mat-radio-button value="flex-end">flex-end</mat-radio-button>
+        <mat-radio-button value="flex-start">flex-start</mat-radio-button>
+        <mat-radio-button value="stretch">stretch</mat-radio-button>
+        <mat-radio-button value="baseline">baseline</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+  <div class="flex-container" [ngStyle]="containerstyle" #flexcontainer>
+    <div class="flex-item-1">1</div>
+    <div class="flex-item-2">2</div>
+    <div class="flex-item-3">3</div>
+    <div class="flex-item-4">4</div>
+    <div class="flex-item-5">5</div>
+  </div>
+  <div class="code-container">
+    &#123; flex-direction: {{ flexgroup.value.flexdirection }}, justify-content: {{ flexgroup.value.justifycontent }}, align-items:
+    {{ flexgroup.value.alignitems }} &#125;
+  </div>
+</div>
