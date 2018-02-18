@@ -27,7 +27,6 @@ export class FlextoolsComponent implements OnInit {
       this.containerstyle['flex-direction'] = result.flexdirection;
       this.containerstyle['justify-content'] = result.justifycontent;
       this.containerstyle['align-items'] = result.alignitems;
-      console.log(this.flexgroup.value.flexdirection);
     });
   }
 }
