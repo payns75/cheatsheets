@@ -55,3 +55,15 @@
     margin-right: 4px;
   }
 }
+
+.selectedroute{
+  background-color: #E91E63;
+  font-size: 1.4em;
+  color: #fff;
+}
+
+.selectedroute:hover, .selectedroute:focus{
+  background-color: #ec407a;
+  font-size: 1.4em;
+  color: #fff;
+}
