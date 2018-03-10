@@ -1,25 +1,71 @@
---dry-run Run through without making any changes. Will list all files that would have been created when running "ng new".
-      aliases:  -d -dryRun
-    --verbose Adds more details to output logging.
-      aliases:  -v -verbose
-    --collection Schematics collection to use.
-      aliases:  -c -collection
-    --directory (string) The directory name to create the app in.
-      aliases:  -dir
-    --inline-style (boolean) Specifies if the style will be in the ts file.
-      aliases:  -is
-    --inline-template (boolean) Specifies if the template will be in the ts file.
-      aliases:  -it
-    --view-encapsulation (string) Specifies the view encapsulation strategy.
-    --version (string) The version of the Angular CLI to use.
-    --routing (boolean) Generates a routing module.
-    --prefix (string) (Default: app) The prefix to apply to generated selectors.
-      aliases:  -p
-    --style (string) (Default: css) The file extension to be used for style files.
-    --skip-tests (boolean) Skip creating spec files.
-      aliases:  -st
-    --skip-install (boolean) Skip installing dependency packages.
-    --skip-git (boolean) Skip initializing a git repository.
-      aliases:  -sg
-    --minimal (boolean) Create a minimal app (no test structure, inline styles/templates).
-    --service-worker (boolean) Installs the @angular/service-worker.
+<form class="options-container" [formGroup]="formgroup" novalidate>
+  <mat-form-field>
+    <input matInput placeholder="Project name" formControlName="projectname" required>
+  </mat-form-field>
+  <div class='result'>
+    <input type="text" #cmdtext [value]="finalcmd" readonly>
+    <button mat-icon-button matTooltip="Copy Code" matTooltipPosition="before" (click)="copycmdtext()">
+      <mat-icon aria-label="Copy code">content_copy</mat-icon>
+    </button>
+  </div>
+  <div class='option-container'>
+    <mat-list formArrayName="boolitems">
+      <mat-list-item *ngFor="let item of booloptionsfg.controls; let i=index" [formGroupName]="i">
+        <ng-container *ngIf="item.value.type=='boolean';else stringinput">
+          <h4 mat-line>
+            <mat-checkbox formControlName="value">{{item.value.option}} :</mat-checkbox>
+          </h4>
+          <p mat-line>
+            {{item.value.description}}
+          </p>
+        </ng-container>
+        <ng-template #stringinput>
+            <mat-form-field>
+                <input matInput [placeholder]="item.value.option" formControlName="value">
+                <mat-hint align="start">
+                  <strong>{{item.value.description}}</strong>
+                </mat-hint>
+              </mat-form-field>
+        </ng-template>
+      </mat-list-item>
+    </mat-list>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="--prefix" formControlName="prefix">
+        <mat-hint align="start">
+          <strong>The prefix to apply to generated selectors.</strong>
+        </mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="--style" formControlName="style">
+        <mat-hint align="start">
+          <strong>The file extension to be used for style files.</strong>
+        </mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="--directory" formControlName="directory">
+        <mat-hint align="start">
+          <strong>The directory name to create the app in.</strong>
+        </mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="--collection" formControlName="collection">
+        <mat-hint align="start">
+          <strong>Schematics collection to use.</strong>
+        </mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="--view-encapsulation" formControlName="viewencapsulation">
+        <mat-hint align="start">
+          <strong>Specifies the view encapsulation strategy.</strong>
+        </mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="--version" formControlName="version">
+        <mat-hint align="start">
+          <strong>The version of the Angular CLI to use.</strong>
+        </mat-hint>
+      </mat-form-field>
+    </div>
+  </div>
+</form>

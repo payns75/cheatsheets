@@ -1,0 +1,27 @@
+:host{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.result{
+    background-color: #000;
+    color: #fff;
+    padding: 16px;
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    input{
+        font-size: 18px;
+        color: #fff;
+        background-color: #000;
+        border:none;
+        width: 100%;
+    }
+}
+
+.option-container{
+    display: flex;
+}

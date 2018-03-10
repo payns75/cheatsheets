@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class FlextoolsComponent implements OnInit {
   constructor(private fb: FormBuilder) {
-    this.flexgroup = this.fb.group({
+    this.flexgroup = fb.group({
       flexdirection: this.containerstyle['flex-direction'],
       justifycontent: this.containerstyle['justify-content'],
       alignitems: this.containerstyle['align-items'],
